@@ -12,9 +12,7 @@ Sistema profesional de análisis de datos de ventas diseñado con **arquitectura
   - Total de ventas
   - Top 3 productos más vendidos
   - Ticket promedio
-  - Crecimiento (cuando aplique)
 - **Acceso rápido:** Botones para abrir Excel y ver gráficos generados
-- **Distribución standalone:** Genera un `.exe` para Windows sin necesidad de instalar Python
 
 --- 
 
@@ -66,7 +64,7 @@ Cada componente puede modificarse independientemente sin romper el resto del sis
 
 ### 2. **Escalabilidad** 
 
-El diseño permite escalar fácilmente: processor.load_data("data/raw/ventas.csv")
+El diseño permite escalar fácilmente:
 
 - Procesar archivos de millones de registros (pandas optimizado) 
 - Agregar nuevos tipos de análisis sin duplicar
@@ -126,22 +124,14 @@ pillow==10.2.0     # Manejo de imágenes
 
 ### Opción 1: Usar la Interfaz Gráfica (Recomendado)
 
-#### Para usuarios finales (sin Python instalado):
-1. Descarga el ejecutable `AnalizadorVentas.exe` 
-2. Haz doble clic en el archivo
+1. Instalar dependencias
+  pip install -r requirements.txt
+2. Ejecutar la GUI
+  python app.py
 3. Arrastra tu archivo CSV o haz clic en "Seleccionar Archivo"
 4. Revisa el preview y opciones
 5. Haz clic en "Analizar"
 6. ¡Listo! Abre el Excel o ve los gráficos generados
-
-#### Para desarrolladores:
-```powershell
-# 1. Instalar dependencias
-pip install -r requirements.txt
-
-# 2. Ejecutar la GUI
-python app.py
-```
 
 ### Opción 2: Usar CLI (Línea de Comandos)
 
