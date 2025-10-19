@@ -1,11 +1,10 @@
-# 📊 Sistema de Análisis de Ventas# Análisis de Ventas
+# 📊 Sistema de Análisis de Ventas
 
-Sistema profesional de análisis de datos de ventas diseñado con **arquitectura modular**. Procesa archivos CSV, realiza análisis estadísticos avanzados, persiste resultados en SQLite y genera visualizaciones profesionales de alta calidad.Sistema de análisis de datos de ventas que procesa archivos CSV, realiza análisis estadísticos, persiste resultados en SQLite y genera visualizaciones.
-
+Sistema profesional de análisis de datos de ventas diseñado con **arquitectura modular**. Procesa archivos CSV, realiza análisis estadísticos avanzados, persiste resultados en SQLite y genera visualizaciones profesionales de alta calidad.
 --- 
 
 ## Estructura del Proyecto
-
+```
 proyecto_ventas/
 ├── data/
 │   ├── raw/
@@ -33,24 +32,24 @@ proyecto_ventas/
 ├── requirements.txt
 ├── main.py                    # Script principal
 └── README.md
+```
 
 ### 1. **Modularidad y Mantenibilidad**
 
 Cada componente puede modificarse independientemente sin romper el resto del sistema.
 
 - Cambiar la lógica de limpieza no afecta al análisis
-- Agregar nuevos análisis no requiere tocar la BDfrom src.data_processor import DataProcessor
-- Cambiar el formato de gráficos no afecta al procesamientofrom src.analyzer import SalesAnalyzer
-
+- Agregar nuevos análisis no requiere tocar la BD
+- Cambiar el formato de gráficos no afecta al procesamiento
 
 ### 2. **Escalabilidad** 
 
 El diseño permite escalar fácilmente: processor.load_data("data/raw/ventas.csv")
 
-- Procesar archivos de millones de registros (pandas optimizado) processor.clean_data()
-- Agregar nuevos tipos de análisis sin duplicar códigoprocessor.calculate_totals()
+- Procesar archivos de millones de registros (pandas optimizado) 
+- Agregar nuevos tipos de análisis sin duplicar
 - Migrar a bases de datos más robustas (PostgreSQL, MongoDB)
-- Paralelizar procesamiento de múltiples archivosanalyzer = SalesAnalyzer(processor.get_clean_data())
+- Paralelizar procesamiento de múltiples archivos
 
 ### 3. **Testabilidad**
 
@@ -58,13 +57,12 @@ Cada módulo puede testearse aisladamente:
 
 - Tests unitarios para cada función
 - Mocks simples para dependencias
-- Tests de integración end-to-end- `data/processed/ventas_clean.csv`: Datos limpios
-- `output/database/ventas.db`: Base de datos SQLite
+- Tests de integración end-to-end
+- Base de datos SQLite
 
 ### 4. **Reutilización**
 
-- Los módulos son reutilizables en otros proyectos:- `output/graficos/top_productos.png`: Gráfico de top productos
-
+- Los módulos son reutilizables en otros proyectos
 
 ### 5. **Manejo de Errores Robusto** 
 
@@ -580,6 +578,3 @@ FROM ventas_mensuales;
 Versión: 1.0.0  
 Última actualización: Octubre 2025
 
----
-
-**Happy Data Analysis! 📊✨**
