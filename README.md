@@ -127,7 +127,7 @@ pillow==10.2.0     # Manejo de imágenes
 ### Opción 1: Usar la Interfaz Gráfica (Recomendado)
 
 #### Para usuarios finales (sin Python instalado):
-1. Descarga el ejecutable `AnalizadorVentas.exe` desde [Releases](../../releases)
+1. Descarga el ejecutable `AnalizadorVentas.exe` 
 2. Haz doble clic en el archivo
 3. Arrastra tu archivo CSV o haz clic en "Seleccionar Archivo"
 4. Revisa el preview y opciones
@@ -148,18 +148,6 @@ python app.py
 ```powershell
 # Ejecutar análisis completo
 python main.py
-```
-
-### Opción 3: Generar ejecutable standalone
-
-```powershell
-# 1. Instalar PyInstaller
-pip install pyinstaller
-
-# 2. Ejecutar el script de build
-python build_exe.py
-
-# 3. El ejecutable estará en dist/AnalizadorVentas.exe
 ```
 
 ---
