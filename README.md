@@ -30,7 +30,7 @@ proyecto_ventas/
 │   ├── analyzer.py            # Análisis de ventas
 │   ├── database.py            # Operaciones de BD
 │   ├── visualizer.py          # Generación de gráficos
-│   └── gui/                   # ⭐ NUEVO: Interfaz gráfica
+│   └── gui/                   # Interfaz gráfica
 │       ├── __init__.py
 │       ├── main_window.py     # Ventana principal
 │       ├── components.py      # Componentes reutilizables
@@ -49,8 +49,7 @@ proyecto_ventas/
 │   └── queries.sql            # Consultas SQL predefinidas
 ├── requirements.txt
 ├── main.py                    # Script CLI (línea de comandos)
-├── app.py                     # ⭐ NUEVO: Entry point GUI
-├── build_exe.py               # ⭐ NUEVO: Script para generar .exe
+├── app.py                     # Entry point GUI
 └── README.md
 ```
 
