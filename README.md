@@ -1,6 +1,21 @@
 # 📊 Sistema de Análisis de Ventas
 
 Sistema profesional de análisis de datos de ventas diseñado con **arquitectura modular**. Procesa archivos CSV, realiza análisis estadísticos avanzados, persiste resultados en SQLite y genera visualizaciones profesionales de alta calidad.
+
+## 🎯 Novedades v2.0
+
+### ✨ Interfaz Gráfica (GUI)
+- **Drag & Drop:** Arrastra tu archivo CSV directamente a la aplicación
+- **Preview de datos:** Visualiza las primeras filas antes de procesar
+- **Progreso en tiempo real:** Barra de progreso con logs detallados
+- **Resumen ejecutivo:** 
+  - Total de ventas
+  - Top 3 productos más vendidos
+  - Ticket promedio
+  - Crecimiento (cuando aplique)
+- **Acceso rápido:** Botones para abrir Excel y ver gráficos generados
+- **Distribución standalone:** Genera un `.exe` para Windows sin necesidad de instalar Python
+
 --- 
 
 ## Estructura del Proyecto
@@ -16,7 +31,12 @@ proyecto_ventas/
 │   ├── data_processor.py      # Carga y limpieza de datos
 │   ├── analyzer.py            # Análisis de ventas
 │   ├── database.py            # Operaciones de BD
-│   └── visualizer.py          # Generación de gráficos
+│   ├── visualizer.py          # Generación de gráficos
+│   └── gui/                   # ⭐ NUEVO: Interfaz gráfica
+│       ├── __init__.py
+│       ├── main_window.py     # Ventana principal
+│       ├── components.py      # Componentes reutilizables
+│       └── styles.py          # Estilos y configuración
 ├── tests/
 │   ├── __init__.py
 │   ├── test_data_processor.py
@@ -30,7 +50,9 @@ proyecto_ventas/
 ├── sql/
 │   └── queries.sql            # Consultas SQL predefinidas
 ├── requirements.txt
-├── main.py                    # Script principal
+├── main.py                    # Script CLI (línea de comandos)
+├── app.py                     # ⭐ NUEVO: Entry point GUI
+├── build_exe.py               # ⭐ NUEVO: Script para generar .exe
 └── README.md
 ```
 
@@ -90,10 +112,54 @@ Cada módulo puede testearse aisladamente:
 
 ### Dependencias Principales
 ```
-pandas==2.3.3 # Procesamiento de datos
+pandas==2.3.3      # Procesamiento de datos
 matplotlib==3.10.7 # Visualizaciones base
-seaborn==0.13.2 # Estilos de gráficos
-pytest==8.4.2 # Testing automatizado
+seaborn==0.13.2    # Estilos de gráficos
+pytest==8.4.2      # Testing automatizado
+openpyxl==3.1.2    # Export a Excel
+pillow==10.2.0     # Manejo de imágenes
+```
+
+---
+
+## 🚀 Inicio Rápido
+
+### Opción 1: Usar la Interfaz Gráfica (Recomendado)
+
+#### Para usuarios finales (sin Python instalado):
+1. Descarga el ejecutable `AnalizadorVentas.exe` desde [Releases](../../releases)
+2. Haz doble clic en el archivo
+3. Arrastra tu archivo CSV o haz clic en "Seleccionar Archivo"
+4. Revisa el preview y opciones
+5. Haz clic en "Analizar"
+6. ¡Listo! Abre el Excel o ve los gráficos generados
+
+#### Para desarrolladores:
+```powershell
+# 1. Instalar dependencias
+pip install -r requirements.txt
+
+# 2. Ejecutar la GUI
+python app.py
+```
+
+### Opción 2: Usar CLI (Línea de Comandos)
+
+```powershell
+# Ejecutar análisis completo
+python main.py
+```
+
+### Opción 3: Generar ejecutable standalone
+
+```powershell
+# 1. Instalar PyInstaller
+pip install pyinstaller
+
+# 2. Ejecutar el script de build
+python build_exe.py
+
+# 3. El ejecutable estará en dist/AnalizadorVentas.exe
 ```
 
 ---
